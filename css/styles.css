@@ -120,7 +120,6 @@ header {
     padding: 10px;
     text-align: center;
     background: rgba(0,0,0,.5);
-    backdrop-filter: blur(5px);
     text-shadow: 5px 5px 5px #000;
     border-radius: 10px;
     color: #fff;
@@ -142,42 +141,6 @@ header {
 .dl__dt {
     font-weight: bold;
     padding: 1rem 0 .2rem 0;
-}
-
-.slider-effect {
-    overflow: hidden;
-    max-width: 500px;
-    margin: .5rem auto 0 auto;
-}
-
-.slider-effect ul {
-	display: flex;
-	padding: 0;
-	width: 400%;
-    animation: slide 20s infinite alternate;
-}
-
-.slider-effect li {
-	width: 100%;
-    list-style-type: none;
-}
-
-.slider-effect img {
-	width: 100%;
-}
-
-@keyframes slide {
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
-
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
 }
 
 .dividing-line, .dividing-line2 {
@@ -262,6 +225,7 @@ header {
     "footer footer";
 }
 
+
 .form-background {
     grid-area: contenido-register;
 }
@@ -291,13 +255,10 @@ header {
 .container-sobre-nosotros {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60px auto auto auto auto auto;
+    grid-template-rows: 60px auto auto auto auto;
     grid-template-areas: "header"
     "contenido-sobre-nosotros"
-    "h3-mas-sobre-nosotros"
-    "proyecto1"
-    "proyecto2"
-    "proyecto3"
+    "proyectos"
     "footer";
 }
 
@@ -305,20 +266,8 @@ header {
     grid-area: contenido-sobre-nosotros;
 }
 
-.h3-mas-sobre-nosotros {
-    grid-area: h3-mas-sobre-nosotros;
-}
-
-.proyecto1 {
-    grid-area: proyecto1;
-}
-
-.proyecto2 {
-    grid-area: proyecto2;
-}
-
-.proyecto3 {
-    grid-area: proyecto3;
+.proyectos {
+    grid-area: proyectos;
 }
 
 .h3-mas-sobre-nosotros {
@@ -334,17 +283,22 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1vh auto;
+    margin: 2vh auto;
     max-width: 350px;
+    padding: 2%;
 }
 
 .enlace-imagen {
-    width: 70%;
+    width: 100%;
     margin: 11%;
 }
 
 .imagenes-proyectos {
     width: 100%;
+}
+
+.proyectos {
+    max-width: 1200px;
 }
 
 .section-sobre-nosotros {
@@ -368,11 +322,14 @@ header {
     text-align: center;
     padding: 1rem;
     max-width: 1023px;
+    margin: 0 auto;
 }
 
             /* Herramientas */
- 
-
+           
+.slider-effect-tools {
+    overflow: hidden;
+}
 
 .container-herramientas {
     display: grid;
@@ -405,41 +362,8 @@ header {
     overflow: hidden;
 }
 
-.slider-tools ul li{
-    width: 100%;
-    list-style-type: none;
-    height: 90vh;
-    background-size: cover;
-    background-position: center;
-}
-
-.lista1 {
-    background-image: url(../images/imagen6.jpg);
-    width: 100%;
-}
-
-.li2 {
-    background-image: url(../images/imagen7.jpg);
-}
-
-.li3 {
-    background-image: url(../images/imagen8.jpg);
-}
-
-.li4 {
-    background-image: url(../images/imagen9.jpg);
-}
-
-.slider-tools {
-    overflow: hidden;
-    margin: .5rem auto 0 auto;
-}
-
-.slider-tools ul{
-    display: flex;
-    padding: 0;
-    width: 400%;
-    animation: slide 20s infinite alternate;
+.h2-tools {
+    z-index: 100;
 }
 
 .ul__li {
@@ -480,84 +404,25 @@ header {
 
 .contenido-help {
     grid-area: contenido-help;
-}
-
-
-
-.form-help {
-    width: 100%;
-    padding: 1rem;
-    max-width: 480px;
-    border-radius: .5rem;
     background-image: url(../images/background-help.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
- }
-
- .form-help h4 {
-     background: transparent;
-     color:#fff;
-     text-align: center;
-     background: #333;
-     padding: .5rem;
-     border-radius: .5rem;
- }
-
-.form__help__input {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 10px;
-    border-radius: .5rem;
-    background: #fff;
-    border: none;
-    color: #000;
 }
 
-.form-help input:focus {
-    outline: none;
-}
-
-.form-help textarea {
-    margin-top: 20px;
-    width: 100%;
-    height: 100px;
-    resize: none;
-    padding: .5rem;
-    border-radius: .5rem;
-    color: #000;
-    background: #fff;
-}
-
-.form__help__button {
-    display: block;
-    text-align: center;
-    margin: 1rem auto;
-    border: 1px solid #00FFF6;
-    padding: .3rem .5rem;
-    border-radius: 10px;
+.form-help {
     background: transparent;
-    font-weight: larger;
 }
 
-.form__help__button:hover {
-    background: #00FFF6;
-    color: #000;
-    cursor: pointer;
+.container-form {
+    width: 100%;
+    max-width: 500px;
 }
 
-.form-help p {
-    display: block;
-    text-align: center;
-    background-color: transparent;
-}
-
-.form-help p a {
+.button-help {
     background: rgba(0,0,0,.5);
-    padding: .2rem;
-    border-radius: .5rem;
 }
+
 @media screen and (min-width:480px) {
 
     .noticias1,.noticias2 {
@@ -595,48 +460,21 @@ header {
         align-items: center;
     }
 
+    .contenido-help .container-form .form-help {
+        background: rgba(0,0,0,.5);
+        backdrop-filter: blur(8px);
+    }
+
+    .button-help {
+        background:transparent;
+    }
+
     .slider-tools ul li img {
         width: 100%;
     }
 
-    .contenido-help {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .table__tools {
         margin-left: 0;
-    }
-
-    .container-form {
-        background: transparent;
-    }
-
-    .form-help {
-        background-image: none;
-        background: rgba(0,0,0,.2);
-        backdrop-filter: blur(8px);
-    }
-
-    .contenido-help {
-        background-image: url(../images/background-help.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-
-    .form-help h4 {
-        background: transparent;
-    }
-
-    .form__help__button {
-        background: transparent;
-    }
-
-    .form-help p a {
-        background: transparent;
     }
 }
 
@@ -650,51 +488,12 @@ header {
         width: 33%;
     }
 
-    .container-sobre-nosotros {
-        grid-template-rows: auto 90vh auto;
-    }
-
-    .container-sobre-nosotros {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto auto auto auto auto auto;
-        grid-template-areas: "header header"
-        "contenido-sobre-nosotros contenido-sobre-nosotros"
-        "h3-mas-sobre-nosotros h3-mas-sobre-nosotros"
-        "proyecto1 proyecto2"
-        "proyecto3 proyecto3"
-        "footer footer";
-    }
-
 }
 
 @media screen and (min-width:768px) {
 
     .container-index {
         grid-template-rows: 60px 90vh auto auto auto auto auto auto;
-    }
-
-    .container-sobre-nosotros {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto auto auto auto;
-        grid-template-areas: "header header header"
-        "contenido-sobre-nosotros contenido-sobre-nosotros contenido-sobre-nosotros "
-        "h3-mas-sobre-nosotros h3-mas-sobre-nosotros h3-mas-sobre-nosotros"
-        "proyecto1 proyecto2 proyecto3"
-        "footer footer footer";
-    }
-
-    .proyecto1, .proyecto2, .proyecto3 {
-        max-width: 300px;
-    }
-
-    .proyecto1 {
-        margin-right: 0;
-    }
-
-    .proyecto3 {
-        margin-left: 0;
     }
 
 }
@@ -729,14 +528,6 @@ header {
         display: none;
     }
 
-
-    .contenido-sobre-nosotros {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
     .section-sobre-nosotros {
         display: block;
     }
@@ -761,25 +552,5 @@ header {
 
     .noticia-10, .noticia-9 {
         display: none;
-    }
-
-    .proyecto1 a, .proyecto2 a,.proyecto3 a {
-        transition: all 1s;
-    }
-
-    .proyecto1 a:hover {
-        box-shadow: -1px -1px 10px #FF0AC8, 1px 1px 10px #00FFF6;
-        transform: scale(1.02);
-    }
-    
-    .proyecto2 a:hover {
-        box-shadow: -1px -1px 10px #FF0AC8, 1px 1px 10px #00FFF6;
-        transform: scale(1.02);
-    }
-    
-    
-    .proyecto3 a:hover {
-        box-shadow: -1px -1px 10px #FF0AC8, 1px 1px 10px #00FFF6;
-        transform: scale(1.02);
     }
 }
