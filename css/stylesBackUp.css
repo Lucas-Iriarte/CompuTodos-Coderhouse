@@ -1,0 +1,328 @@
+* {
+    font-family: 'Rajdhani', sans-serif;
+    background: #1f1f2e;
+    margin: 0;
+    padding: 0;
+    color:#00FFF6;
+    box-sizing: border-box;
+}
+
+.color-default {
+    color: #00FFF6;
+}
+
+.mantener:hover {
+    color: #08a9a3;
+}
+
+            /* index */
+
+.menu-desplegable {
+    transition: all 1s;
+}
+
+.logo__a {
+    text-decoration: none;
+}
+
+header {
+    height: 60px;
+    position: relative;
+    z-index: 100;
+}
+
+.logo__a__img {
+    width: 60px;
+}
+
+.nav-link:hover {
+    color: #08a9a3;
+}
+.nav-link:hover > i {
+    color: #08a9a3;
+}
+
+.background-index {
+    height: 90vh;
+    background-image: url(../images/imagen1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-index__h2 {
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(8px);
+}
+
+.slide-index, .tabla-index, .linea-1 {
+    max-width: 500px;
+}
+
+.linea {
+    height: .7rem;
+}
+
+.noticias {
+    max-width: 260px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.thead__th:nth-child(odd) {
+    background: #4e044a;
+}
+
+.thead__th:nth-child(even) {
+    background: #6a0465;
+}
+
+.tr__td {
+    padding: .5rem .5rem .5rem 0;
+    border-bottom: 1px solid #00FFF6;
+}
+
+
+            /* registrarme */
+
+.background-register {
+    height: 90vh;
+    background-image: url(../images/register-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.form-registrarse {
+    background: transparent;
+    max-width: 500px;
+}
+
+.background__h4_registrarse {
+    background: #555;
+}
+
+
+
+            /* Sobre nosotros */
+
+
+
+
+.container-sobre-nosotros {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto auto auto auto;
+    grid-template-areas: "header"
+    "contenido-sobre-nosotros"
+    "proyectos"
+    "footer";
+}
+
+.contenido-sobre-nosotros {
+    grid-area: contenido-sobre-nosotros;
+}
+
+.proyectos {
+    grid-area: proyectos;
+}
+
+.h3-mas-sobre-nosotros {
+    text-align: center;
+}
+
+.proyecto1, .proyecto2, .proyecto3 {
+    width: 100%;
+    background-image: url(../images/background-proyectos.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vh auto;
+    max-width: 350px;
+    padding: 2%;
+}
+
+.enlace-imagen {
+    width: 100%;
+    margin: 11%;
+}
+
+.imagenes-proyectos {
+    width: 100%;
+}
+
+.proyectos {
+    max-width: 1200px;
+}
+
+.section-sobre-nosotros {
+    background-color: transparent;
+}
+
+.article-sobre-nosotros p{
+    background: transparent;
+}
+
+.h2-sobre-nosotros {
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.section-sobre-nosotros {
+    text-align: center;
+    padding: 1rem;
+    max-width: 1023px;
+    margin: 0 auto;
+}
+
+            /* Herramientas */
+           
+.slider-effect-tools {
+    overflow: hidden;
+}
+
+.container-herramientas {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 90vh auto auto;
+    grid-template-areas: "header"
+    "background-tools"
+    "contenido-tools"
+    "footer";
+}
+
+.background-tools {
+    position: relative;
+}
+
+.h2-tools {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    padding:.2rem .5rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: rgba(0,0,0,.2);
+    backdrop-filter: blur(8px);
+}
+
+.background-tools {
+    overflow: hidden;
+}
+
+.h2-tools {
+    z-index: 100;
+}
+
+.ul__li {
+    padding-top: 1rem;
+   margin-left: 2rem;
+}
+
+.table__tools {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 1rem;
+}
+
+.thead__th-tools {
+    padding: .5rem;
+    background-color: #4e044a;
+    text-align: left;
+}
+
+.tr__td-tools {
+    padding: .5rem;
+    border-bottom: 1px solid #00FFF6;
+}
+
+
+
+
+            /* Ayuda */
+
+.container-help {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 90vh auto;
+    grid-template-areas: "header"
+    "contenido-help"
+    "footer";
+}
+
+.contenido-help {
+    grid-area: contenido-help;
+    background-image: url(../images/background-help.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-help {
+    background: transparent;
+}
+
+.container-form {
+    width: 100%;
+    max-width: 500px;
+}
+
+.button-help {
+    background: rgba(0,0,0,.5);
+}
+
+@media screen and (min-width:480px) {
+
+    .form-registrarse {
+        background: rgba(0,0,0,.5);
+        backdrop-filter: blur(8px);
+    }
+
+    .background__h4_registrarse {
+        background: transparent;
+    }
+
+    .contenido-help .container-form .form-help {
+        background: rgba(0,0,0,.5);
+        backdrop-filter: blur(8px);
+    }
+
+    .button-help {
+        background:transparent;
+    }
+
+    .slider-tools ul li img {
+        width: 100%;
+    }
+
+    .table__tools {
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width:1023px) {
+
+    .section-sobre-nosotros {
+        display: block;
+    }
+}
+
+@media screen and (min-width:1200px) {
+
+    .rightside {
+        position: absolute;
+        width: 90%;
+    }
+}
