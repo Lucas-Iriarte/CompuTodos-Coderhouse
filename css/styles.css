@@ -10,28 +10,23 @@
   color: #00FFF6; }
 
 .mantener:hover {
-  color: #08a9a3; }
+  color: #06837e; }
 
 /* index */
-.menu-desplegable {
-  transition: all 1s; }
-
-.logo__a {
-  text-decoration: none; }
-
 header {
   height: 60px;
   position: relative;
   z-index: 100; }
-
-.logo__a__img {
-  width: 60px; }
-
-.nav-link:hover {
-  color: #08a9a3; }
-
-.nav-link:hover > i {
-  color: #08a9a3; }
+  header .container-logo-nav-links .logo .logo__a {
+    text-decoration: none; }
+    header .container-logo-nav-links .logo .logo__a .logo__a__img {
+      width: 60px; }
+  header .container-logo-nav-links .menu-desplegable {
+    transition: all 1s; }
+    header .container-logo-nav-links .menu-desplegable .nav-link:hover {
+      color: #06837e; }
+      header .container-logo-nav-links .menu-desplegable .nav-link:hover i {
+        color: #06837e; }
 
 .background-index {
   height: 90vh;
@@ -43,7 +38,13 @@ header {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px); }
 
-.slider-container .slide-index, .slider-container .linea-1 {
+@media (min-width: 1200px) {
+  .rightside {
+    position: absolute;
+    width: 90%; } }
+
+.slider-container .slide-index,
+.slider-container .linea-1 {
   max-width: 500px; }
 
 .tabla-container .tabla-index {
@@ -58,10 +59,15 @@ header {
     border-bottom: 1px solid #00FFF6; }
 
 .linea {
-  height: .7rem; }
+  height: .5rem; }
 
 .noticias-container .noticias {
   max-width: 260px; }
+
+.link-footer:hover {
+  color: #06837e; }
+  .link-footer:hover i {
+    color: #06837e; }
 
 /* registrarme */
 .background-register {
@@ -74,153 +80,129 @@ header {
   .background-register .form-registrarse {
     background: transparent;
     max-width: 500px; }
+    @media (min-width: 480px) {
+      .background-register .form-registrarse {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px); } }
     .background-register .form-registrarse .background__h4_registrarse {
       background: #222; }
+      @media (min-width: 480px) {
+        .background-register .form-registrarse .background__h4_registrarse {
+          background: transparent; } }
+    .background-register .form-registrarse .container-button-register .button-register {
+      background-color: rgba(0, 0, 0, 0.5); }
+      @media (min-width: 480px) {
+        .background-register .form-registrarse .container-button-register .button-register {
+          background: transparent; } }
 
 /* Sobre nosotros */
-.container-sobre-nosotros {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px auto auto auto auto;
-  grid-template-areas: "header" "contenido-sobre-nosotros" "proyectos" "footer"; }
-
-.contenido-sobre-nosotros {
-  grid-area: contenido-sobre-nosotros; }
-  .contenido-sobre-nosotros .h2-sobre-nosotros {
-    height: 25vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center; }
-  .contenido-sobre-nosotros .section-sobre-nosotros {
-    text-align: center;
-    padding: 1rem;
-    max-width: 1023px;
-    margin: 0 auto; }
-
-.proyectos {
-  grid-area: proyectos; }
-
-.h3-mas-sobre-nosotros {
-  text-align: center; }
-
-.proyecto1, .proyecto2, .proyecto3 {
-  width: 100%;
-  background-image: url(../images/background-proyectos.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.contenido-sobre-nosotros .container-h2-sobre-nosotros {
+  height: 25vh;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 2vh auto;
-  max-width: 350px;
-  padding: 2%; }
+  justify-content: center; }
+  @media (min-width: 480px) {
+    .contenido-sobre-nosotros .container-h2-sobre-nosotros .h2-sobre-nosotros {
+      background-image: url(../images/background-sobre-nosotros.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      margin: 0;
+      padding: 2rem;
+      color: #fff; } }
 
-.enlace-imagen {
-  width: 100%;
-  margin: 11%; }
-
-.imagenes-proyectos {
-  width: 100%; }
+.contenido-sobre-nosotros .section-sobre-nosotros {
+  text-align: center;
+  padding: 1rem;
+  max-width: 1023px;
+  margin: 0 auto; }
 
 .proyectos {
   max-width: 1200px; }
+  .proyectos .proyecto1,
+  .proyectos .proyecto2,
+  .proyectos .proyecto3 {
+    width: 100%;
+    background-image: url(../images/background-proyectos.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vh auto;
+    max-width: 350px;
+    padding: 2%; }
+    .proyectos .proyecto1 .enlace-imagen,
+    .proyectos .proyecto2 .enlace-imagen,
+    .proyectos .proyecto3 .enlace-imagen {
+      width: 100%;
+      margin: 11%; }
+      .proyectos .proyecto1 .enlace-imagen .imagenes-proyectos,
+      .proyectos .proyecto2 .enlace-imagen .imagenes-proyectos,
+      .proyectos .proyecto3 .enlace-imagen .imagenes-proyectos {
+        width: 100%; }
+
+.proyecto-hover, .proyecto-hover-invertido:hover {
+  transition: all 1s; }
+  @media (min-width: 1200px) {
+    .proyecto-hover:hover, .proyecto-hover-invertido:hover {
+      transform: scale(1.03);
+      box-shadow: -5px -5px 10px #FF0AC8, 5px 5px 10px #00FFF6; } }
+
+.proyecto-hover-invertido:hover {
+  transform: scale(1.05); }
 
 /* Herramientas */
-.slider-effect-tools {
-  overflow: hidden; }
-
-.container-herramientas {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px 90vh auto auto;
-  grid-template-areas: "header" "background-tools" "contenido-tools" "footer"; }
-
 .background-tools {
-  position: relative; }
-
-.h2-tools {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.5);
-  padding: .2rem .5rem;
-  border-radius: .5rem;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px); }
-
-.background-tools {
+  position: relative;
+  height: 90vh;
   overflow: hidden; }
-
-.h2-tools {
-  z-index: 100; }
-
-.ul__li {
-  padding-top: 1rem;
-  margin-left: 2rem; }
+  .background-tools .container-h2-tools .h2-tools {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: .2rem .5rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    z-index: 100; }
 
 .table__tools {
   width: 100%;
   max-width: 480px;
   margin-top: 1rem; }
-
-.thead__th-tools {
-  padding: .5rem;
-  background-color: #4e044a;
-  text-align: left; }
-
-.tr__td-tools {
-  padding: .5rem;
-  border-bottom: 1px solid #00FFF6; }
+  .table__tools thead .thead__th-tools {
+    background-color: #4e044a; }
+  .table__tools tr .tr__td-tools {
+    border-bottom: 1px solid #00FFF6; }
 
 /* Ayuda */
 .contenido-help {
-  grid-area: contenido-help;
   background-image: url(../images/background-help.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 90vh; }
-
-.form-help {
-  background: transparent; }
-  .form-help .background__h4_help {
-    background: #222; }
-
-.container-form {
-  width: 100%;
-  max-width: 500px; }
-
-.button-help {
-  background: rgba(0, 0, 0, 0.5); }
-
-@media screen and (min-width: 480px) {
-  .background-register .form-registrarse {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px); }
-    .background-register .form-registrarse .background__h4_registrarse {
+  .contenido-help .container-form {
+    max-width: 500px; }
+    .contenido-help .container-form .form-help {
       background: transparent; }
-  .contenido-help .container-form .form-help {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px); }
-    .contenido-help .container-form .form-help .background__h4_help {
-      background: transparent; }
-  .button-help {
-    background: transparent; }
-  .slider-tools ul li img {
-    width: 100%; }
-  .table__tools {
-    margin-left: 0; } }
-
-@media screen and (min-width: 1023px) {
-  .section-sobre-nosotros {
-    display: block; } }
-
-@media screen and (min-width: 1200px) {
-  .rightside {
-    position: absolute;
-    width: 90%; } }
+      @media (min-width: 480px) {
+        .contenido-help .container-form .form-help {
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(8px); } }
+      .contenido-help .container-form .form-help .background__h4_help {
+        background: #222; }
+        @media (min-width: 480px) {
+          .contenido-help .container-form .form-help .background__h4_help {
+            background: transparent; } }
+      .contenido-help .container-form .form-help .container-button-help .button-help {
+        background: rgba(0, 0, 0, 0.5); }
+        @media (min-width: 480px) {
+          .contenido-help .container-form .form-help .container-button-help .button-help {
+            background: transparent; } }

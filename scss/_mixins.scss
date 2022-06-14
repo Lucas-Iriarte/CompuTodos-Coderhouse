@@ -1,0 +1,14 @@
+$escritorio:1200px;
+$celular:480px;
+
+@mixin escritorio {
+    @media (min-width:#{$escritorio}) {
+        @content;
+    }
+}
+
+@mixin celular {
+ @media(min-width:#{$celular}) {
+    @content
+ }   
+}

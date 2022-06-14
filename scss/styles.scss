@@ -1,4 +1,5 @@
 @import 'colores';
+@import 'mixins';
 
 
 * {
@@ -6,45 +7,53 @@
     background: #1f1f2e;
     margin: 0;
     padding: 0;
-    color:$color-principal;
+    color: map-get($colores,color-principal);
     box-sizing: border-box;
 }
 
 .color-default {
-    color: $color-principal;
+    color: map-get($colores,color-principal);
 }
 
-.mantener:hover {
-    color: $color-hover;
+.mantener {
+    &:hover {
+        color: map-get($colores,color-hover);
+    }
 }
 
-            /* index */
-
-.menu-desplegable {
-    transition: all 1s;
-}
-
-.logo__a {
-    text-decoration: none;
-}
+/* index */
 
 header {
+
     height: 60px;
     position: relative;
     z-index: 100;
-}
 
-.logo__a__img {
-    width: 60px;
-}
+    .container-logo-nav-links {
 
-.nav-link {
-    &:hover {
-        color: $color-hover;
+        .logo {
+            .logo__a {
+                text-decoration: none;
+
+                .logo__a__img {
+                    width: 60px;
+                }
+            }
+        }
+
+        .menu-desplegable {
+            transition: all 1s;
+
+            .nav-link {
+                &:hover {
+                    color:map-get($colores,color-hover);
+                    i  {
+                        color: map-get($colores,color-hover);
+                    }
+                }
+            }
+        }
     }
-}
-.nav-link:hover > i {
-        color: $color-hover;
 }
 
 .background-index {
@@ -55,15 +64,24 @@ header {
     background-position: center;
 
     .background-index__h2 {
-        background: rgba(0,0,0,.5);
+        background: rgba(0, 0, 0, .5);
         backdrop-filter: blur(8px);
     }
 }
 
+.rightside {
+    @include escritorio{
+        position: absolute;
+        width: 90%;
+    }
+}
+
 .slider-container {
-  .slide-index, .linea-1 {
-    max-width: 500px;
-}  
+
+    .slide-index,
+    .linea-1 {
+        max-width: 500px;
+    }
 }
 
 .tabla-container {
@@ -74,20 +92,20 @@ header {
         .thead__th:nth-child(odd) {
             background: #4e044a;
         }
-        
+
         .thead__th:nth-child(even) {
             background: #6a0465;
         }
-        
+
         .tr__td {
             padding: .5rem .5rem .5rem 0;
-            border-bottom: 1px solid $color-principal;
+            border-bottom: 1px solid map-get($colores,color-principal);
         }
     }
 }
 
 .linea {
-    height: .7rem;
+    height: .5rem;
 }
 
 .noticias-container {
@@ -96,7 +114,16 @@ header {
     }
 }
 
-            /* registrarme */
+.link-footer {
+    &:hover {
+        color: map-get($colores,color-hover);
+        i {
+            color: map-get($colores,color-hover);
+        }
+    }
+}
+
+/* registrarme */
 
 .background-register {
     height: 90vh;
@@ -110,34 +137,55 @@ header {
         background: transparent;
         max-width: 500px;
 
+        @include celular {
+            background-color: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(8px);
+        }
+
         .background__h4_registrarse {
             background: #222;
+
+            @include celular {
+                background: transparent;
+            }
+        }
+
+        .container-button-register {
+            
+            .button-register {
+                background-color: rgba(0, 0, 0, .5);
+
+                @include celular {
+                    background: transparent;
+                }
+            }
         }
     }
 }
 
-            /* Sobre nosotros */
+/* Sobre nosotros */
 
-.container-sobre-nosotros {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 60px auto auto auto auto;
-    grid-template-areas: "header"
-    "contenido-sobre-nosotros"
-    "proyectos"
-    "footer";
-}
 
 .contenido-sobre-nosotros {
-    grid-area: contenido-sobre-nosotros;
 
-    .h2-sobre-nosotros {
+    .container-h2-sobre-nosotros {
         height: 25vh;
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #fff;
-        text-align: center;
+
+        .h2-sobre-nosotros {
+            @include celular  {
+                background-image: url(../images/background-sobre-nosotros.png);
+                background-repeat: no-repeat;
+                background-size:100%;
+                background-position: center;
+                margin: 0;
+                padding: 2rem;
+                color: #fff;
+            }
+        }
     }
 
     .section-sobre-nosotros {
@@ -149,182 +197,135 @@ header {
 }
 
 .proyectos {
-    grid-area: proyectos;
-}
-
-.h3-mas-sobre-nosotros {
-    text-align: center;
-}
-
-.proyecto1, .proyecto2, .proyecto3 {
-    width: 100%;
-    background-image: url(../images/background-proyectos.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2vh auto;
-    max-width: 350px;
-    padding: 2%;
-}
-
-.enlace-imagen {
-    width: 100%;
-    margin: 11%;
-}
-
-.imagenes-proyectos {
-    width: 100%;
-}
-
-.proyectos {
     max-width: 1200px;
+
+    .proyecto1,
+    .proyecto2,
+    .proyecto3 {
+        width: 100%;
+        background-image: url(../images/background-proyectos.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2vh auto;
+        max-width: 350px;
+        padding: 2%;
+
+        .enlace-imagen {
+            width: 100%;
+            margin: 11%;
+
+            .imagenes-proyectos {
+                width: 100%;
+            }
+        }
+    }
 }
 
-            /* Herramientas */
-           
-.slider-effect-tools {
-    overflow: hidden;
+.proyecto-hover{
+    transition:all 1s;
+    @include escritorio{
+        &:hover {
+            transform: scale(1.03);
+            box-shadow: -5px -5px 10px #FF0AC8, 5px 5px 10px map-get($colores,color-principal);
+        }
+    }
 }
 
-.container-herramientas {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 60px 90vh auto auto;
-    grid-template-areas: "header"
-    "background-tools"
-    "contenido-tools"
-    "footer";
+.proyecto-hover-invertido {
+    &:hover {
+        @extend .proyecto-hover;
+        transform: scale(1.05);
+    }
 }
+
+
+/* Herramientas */
+
 
 .background-tools {
     position: relative;
-}
-
-.h2-tools {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
-    padding:.2rem .5rem;
-    border-radius: .5rem;
-    color: #fff;
-    background: rgba(0,0,0,.2);
-    backdrop-filter: blur(8px);
-}
-
-.background-tools {
+    height: 90vh;
     overflow: hidden;
-}
 
-.h2-tools {
-    z-index: 100;
-}
+    .container-h2-tools {
 
-.ul__li {
-    padding-top: 1rem;
-   margin-left: 2rem;
+        .h2-tools {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .5);
+            padding: .2rem .5rem;
+            border-radius: .5rem;
+            color: #fff;
+            background: rgba(0, 0, 0, .2);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+        }
+    }
 }
 
 .table__tools {
     width: 100%;
     max-width: 480px;
     margin-top: 1rem;
+
+    thead {
+
+        .thead__th-tools {
+            background-color: #4e044a;
+        }
+    }
+
+    tr {
+        .tr__td-tools {
+            border-bottom: 1px solid map-get($colores,color-principal);
+        }
+    }
 }
 
-.thead__th-tools {
-    padding: .5rem;
-    background-color: #4e044a;
-    text-align: left;
-}
-
-.tr__td-tools {
-    padding: .5rem;
-    border-bottom: 1px solid #00FFF6;
-}
-
-
-
-
-            /* Ayuda */
+/* Ayuda */
 
 
 .contenido-help {
-    grid-area: contenido-help;
     background-image: url(../images/background-help.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 90vh;
-}
 
-.form-help {
-    background: transparent;
+    .container-form {
+        max-width: 500px;
 
-    .background__h4_help {
-        background: #222;
-    }
-}
-
-.container-form {
-    width: 100%;
-    max-width: 500px;
-}
-
-.button-help {
-    background: rgba(0,0,0,.5);
-}
-
-@media screen and (min-width:480px) {
-
-    .background-register {
-
-    .form-registrarse {
-        background-color: rgba(0,0,0,.5);
-        backdrop-filter: blur(8px);
-
-        .background__h4_registrarse {
+        .form-help {
             background: transparent;
+
+            @include celular {
+                background: rgba(0, 0, 0, .5);
+                backdrop-filter: blur(8px);
+            }
+
+            .background__h4_help {
+                background: #222;
+
+                @include celular {
+                    background: transparent;
+                }
+            }
+
+            .container-button-help {
+                .button-help {
+                    background: rgba(0, 0, 0, .5);
+
+                    @include celular {
+                        background: transparent;
+                    }
+                }
+            }
         }
-    } 
-}   
-
-    .contenido-help .container-form .form-help {
-        background: rgba(0,0,0,.5);
-        backdrop-filter: blur(8px);
-
-        .background__h4_help {
-            background: transparent;
-        }
-    }
-
-    .button-help {
-        background:transparent;
-    }
-
-    .slider-tools ul li img {
-        width: 100%;
-    }
-
-    .table__tools {
-        margin-left: 0;
-    }
-}
-
-@media screen and (min-width:1023px) {
-
-    .section-sobre-nosotros {
-        display: block;
-    }
-}
-
-@media screen and (min-width:1200px) {
-
-    .rightside {
-        position: absolute;
-        width: 90%;
     }
 }
