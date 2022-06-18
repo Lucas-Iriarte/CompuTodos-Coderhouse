@@ -1,5 +1,5 @@
 $escritorio:1200px;
-$celular:480px;
+$tablet:480px;
 
 @mixin escritorio {
     @media (min-width:#{$escritorio}) {
@@ -7,8 +7,8 @@ $celular:480px;
     }
 }
 
-@mixin celular {
- @media(min-width:#{$celular}) {
-    @content
+@mixin tablet {
+ @media(min-width:#{$tablet}) {
+    @content;
  }   
 }

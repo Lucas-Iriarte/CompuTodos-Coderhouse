@@ -7,17 +7,17 @@
     background: #1f1f2e;
     margin: 0;
     padding: 0;
-    color: map-get($colores,color-principal);
+    color: map-get($colores, color-principal);
     box-sizing: border-box;
 }
 
 .color-default {
-    color: map-get($colores,color-principal);
+    color: map-get($colores, color-principal);
 }
 
 .mantener {
     &:hover {
-        color: map-get($colores,color-hover);
+        color: map-get($colores, color-hover);
     }
 }
 
@@ -45,10 +45,15 @@ header {
             transition: all 1s;
 
             .nav-link {
+                &:visited {
+                    color: map-get($colores, color-principal);
+                }
+
                 &:hover {
-                    color:map-get($colores,color-hover);
-                    i  {
-                        color: map-get($colores,color-hover);
+                    color: map-get($colores, color-hover);
+
+                    i {
+                        color: map-get($colores, color-hover);
                     }
                 }
             }
@@ -70,7 +75,7 @@ header {
 }
 
 .rightside {
-    @include escritorio{
+    @include escritorio {
         position: absolute;
         width: 90%;
     }
@@ -86,20 +91,26 @@ header {
 
 .tabla-container {
     .tabla-index {
-        max-width: 500px;
-        border-collapse: collapse;
+        display: none;
 
-        .thead__th:nth-child(odd) {
-            background: #4e044a;
-        }
+        @include tablet {
+            display: table;
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
 
-        .thead__th:nth-child(even) {
-            background: #6a0465;
-        }
+            .thead__th:nth-child(odd) {
+                background: #4e044a;
+            }
 
-        .tr__td {
-            padding: .5rem .5rem .5rem 0;
-            border-bottom: 1px solid map-get($colores,color-principal);
+            .thead__th:nth-child(even) {
+                background: #6a0465;
+            }
+
+            .tr__td {
+                padding: .5rem .5rem .5rem 0;
+                border-bottom: 1px solid map-get($colores, color-principal);
+            }
         }
     }
 }
@@ -111,16 +122,30 @@ header {
 .noticias-container {
     .noticias {
         max-width: 260px;
+        &:hover {
+            a{
+                color: map-get($colores, color-hover);
+
+                p {
+                    color: map-get($colores, color-hover);
+                }
+            }
+        }
     }
 }
 
 .link-footer {
     &:hover {
-        color: map-get($colores,color-hover);
+        color: map-get($colores, color-hover);
+
         i {
-            color: map-get($colores,color-hover);
+            color: map-get($colores, color-hover);
         }
     }
+}
+
+.copyright {
+    color: #048a85;
 }
 
 /* registrarme */
@@ -137,7 +162,7 @@ header {
         background: transparent;
         max-width: 500px;
 
-        @include celular {
+        @include tablet {
             background-color: rgba(0, 0, 0, .5);
             backdrop-filter: blur(8px);
         }
@@ -145,17 +170,17 @@ header {
         .background__h4_registrarse {
             background: #222;
 
-            @include celular {
+            @include tablet {
                 background: transparent;
             }
         }
 
         .container-button-register {
-            
+
             .button-register {
                 background-color: rgba(0, 0, 0, .5);
 
-                @include celular {
+                @include tablet {
                     background: transparent;
                 }
             }
@@ -176,14 +201,14 @@ header {
         justify-content: center;
 
         .h2-sobre-nosotros {
-            @include celular  {
+            color: #fff;
+
+            @include tablet {
                 background-image: url(../images/background-sobre-nosotros.png);
+                background-size: 100%;
                 background-repeat: no-repeat;
-                background-size:100%;
                 background-position: center;
-                margin: 0;
-                padding: 2rem;
-                color: #fff;
+                padding: 3rem;
             }
         }
     }
@@ -225,20 +250,24 @@ header {
     }
 }
 
-.proyecto-hover{
-    transition:all 1s;
-    @include escritorio{
+.proyecto-hover {
+    transition: all 1s;
+
+    @include escritorio {
         &:hover {
             transform: scale(1.03);
-            box-shadow: -5px -5px 10px #FF0AC8, 5px 5px 10px map-get($colores,color-principal);
+            box-shadow: -5px -5px 10px #FF0AC8, 5px 5px 10px map-get($colores, color-principal);
         }
     }
 }
 
 .proyecto-hover-invertido {
-    &:hover {
-        @extend .proyecto-hover;
-        transform: scale(1.05);
+    @extend .proyecto-hover;
+
+    @include escritorio {
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
 
@@ -283,7 +312,7 @@ header {
 
     tr {
         .tr__td-tools {
-            border-bottom: 1px solid map-get($colores,color-principal);
+            border-bottom: 1px solid map-get($colores, color-principal);
         }
     }
 }
@@ -304,7 +333,17 @@ header {
         .form-help {
             background: transparent;
 
-            @include celular {
+            .p-form-help {
+                background: transparent;
+                a {
+                    background: rgba(0, 0, 0, .5);
+                    @include tablet {
+                        background: transparent;
+                    }
+                }
+            }
+
+            @include tablet {
                 background: rgba(0, 0, 0, .5);
                 backdrop-filter: blur(8px);
             }
@@ -312,7 +351,7 @@ header {
             .background__h4_help {
                 background: #222;
 
-                @include celular {
+                @include tablet {
                     background: transparent;
                 }
             }
@@ -321,7 +360,7 @@ header {
                 .button-help {
                     background: rgba(0, 0, 0, .5);
 
-                    @include celular {
+                    @include tablet {
                         background: transparent;
                     }
                 }
