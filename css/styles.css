@@ -117,7 +117,8 @@ header {
   align-items: center;
   justify-content: center; }
   .contenido-sobre-nosotros .container-h2-sobre-nosotros .h2-sobre-nosotros {
-    color: #fff; }
+    color: #fff;
+    text-align: center; }
     @media (min-width: 480px) {
       .contenido-sobre-nosotros .container-h2-sobre-nosotros .h2-sobre-nosotros {
         background-image: url(../images/background-sobre-nosotros.png);
